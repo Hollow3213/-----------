@@ -1,0 +1,72 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+ol {
+  margin: 0;
+  padding: 0;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+button,
+input,
+textarea,
+select {
+  font: inherit;
+}
+
+button {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+:root {
+  /* Фон */
+  --color-bg: #0d0f12;
+  --color-sidebar: #17191d;
+  --color-card: #1b1e23;
+  --color-card-hover: #22262d;
+
+  /* Текст */
+  --color-text-primary: #f5f7fa;
+  --color-text-secondary: #9aa3b2;
+  --color-text-muted: #6b7280;
+
+  /* Акцент */
+  --color-accent: #3b82ff;
+  --color-accent-hover: #2563eb;
+
+  /* Логотип / дополнительные акценты */
+  --color-purple: #6366f1;
+  --color-cyan: #22d3ee;
+
+  /* Состояния */
+  --color-success: #22c55e;
+  --color-warning: #f59e0b;
+  --color-danger: #ef4444;
+
+  /* Границы */
+  --color-border: #2a2f38;
+}

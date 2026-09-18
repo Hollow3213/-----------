@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Task Tracker — приложение для управления задачами и проектами"
+    />
+    <title>Task Tracker — управление задачами</title>
+    <link rel="stylesheet" href="./fonts/fonts.css" />
+    <link rel="stylesheet" href="./styles/global.css" />
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./script.js" defer></script>
+  </head>
+  <body>
+    <aside class="sidebar">
+      <!--TODO: добавить ссылку на логотип-->
+      <a class="sidebar__logo">
+        <img />
+      </a>
+      <h2 class="sidebar__title">Task Tracker</h2>
+      <p class="sidebar__tagline">PLAN · DO · ACHIEVE</p>
+
+      <nav class="sidebar__navigation">
+        <ul class="sidebar__list">
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="#">Главная</a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="#">Мои задачи</a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="#">Календарь</a>
+          </li>
+          <li class="sidebar__item">
+            <a class="sidebar__link" href="#">Статистика</a>
+          </li>
+        </ul>
+      </nav>
+    </aside>
+    <main class="main">
+      <header class="header">
+        <div class="header__actions">
+          <search>
+            <form action="/search.php" method="GET" class="header__search-form">
+              <input
+                type="search"
+                id="search-input"
+                name="search"
+                class="header__search-input"
+                placeholder="Введите запрос..."
+              />
+              <!--TODO: сделать лупу-->
+              <button type="submit" class="header__search-button">
+                <img src="..." alt="Поиск" />
+              </button>
+            </form>
+          </search>
+          <div class="header__notifications">
+            <button type="button" class="header__notifications-button">
+              <img src="..." alt="Уведомления" />
+            </button>
+            <menu class="header__notifications-menu"></menu>
+          </div>
+          <div class="header__profile">
+            <button type="button" class="header__profile-button">
+              <img src="..." alt="Профиль" />
+            </button>
+            <menu class="header__profile-menu">
+              <a class="header__profile-link" href="#">Профиль</a>
+              <a class="header__profile-link" href="#">Настройки</a>
+              <a class="header__profile-link" href="#">Выйти</a>
+            </menu>
+          </div>
+        </div>
+      </header>
+      <section class="main__welcome">
+        <h1 class="main__welcome-title">Привет, Игорь!</h1>
+        <p class="main__welcome-text">Пусть сегодня все получится</p>
+      </section>
+      <section class="main__cards">
+        <div class="main__card">
+          <img src="#" alt="" />
+          <h2 class="main__card-title">Всего задач</h2>
+          <p class="main__card-text">10</p>
+        </div>
+        <div class="main__card">
+          <img src="#" alt="" />
+          <h2 class="main__card-title">В работе</h2>
+          <p class="main__card-text">10</p>
+        </div>
+        <div class="main__card">
+          <img src="#" alt="" />
+          <h2 class="main__card-title">Выполнено</h2>
+          <p class="main__card-text">10</p>
+        </div>
+      </section>
+      <section class="main__recent-tasks">
+        <div class="main__task">
+          <h2 class="main__task-title">Изучить реакт</h2>
+          <p class="main__task-text">
+            Пройти теорию/практику на FCC а также...
+          </p>
+          <p class="main__task-created">Задача создана: 18.09.2026</p>
+          <p class="main__task-deadline">Дедлайн: 18.10.2026</p>
+        </div>
+      </section>
+      <section class="main__deadlines">
+        <div class="main__task">
+          <h2 class="main__task-title">Приготовить печеньки</h2>
+          <p class="main__task-text">
+            Купить ингредиенты, приготовить печеньки, мы забыли поставить
+            таймер...
+          </p>
+          <p class="main__task-created">Задача создана: 22.08.2026</p>
+          <p class="main__task-deadline">Дедлайн: 22.09.2026</p>
+        </div>
+      </section>
+    </main>
+  </body>
+</html>
