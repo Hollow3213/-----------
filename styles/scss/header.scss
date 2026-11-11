@@ -1,0 +1,120 @@
+@use "mixins";
+
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  flex-shrink: 0;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+.header {
+  background-color: var(--color-sidebar);
+  padding: 12px;
+  border-bottom: 3px solid var(--color-border);
+
+  &__actions {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__left {
+    @include mixins.flex-center;
+    gap: 15px;
+  }
+  &__right {
+    @include mixins.flex-center;
+    gap: 15px;
+  }
+  &__search {
+    @include mixins.flex-center;
+    gap: 8px;
+  }
+  &__search-form {
+    width: 0;
+    opacity: 0;
+    overflow: hidden;
+    @include mixins.transition(width, opacity);
+  }
+
+  &__search.header__search_open {
+    .header__search-form {
+      width: 210px;
+      opacity: 1;
+    }
+  }
+
+  &__search-input {
+    background-color: color-mix(
+      in srgb,
+      var(--color-text-muted) 30%,
+      transparent
+    );
+    border: 2px solid var(--color-text-muted);
+    color: var(--color-text-primary);
+    padding: 5px 5px;
+    border-radius: 8px;
+    outline: none;
+    @include mixins.transition(border-color, background-color);
+
+    &:focus {
+      border-color: var(--color-accent);
+    }
+  }
+  &__theme-input {
+    position: absolute;
+    opacity: 0;
+    width: 1px;
+    height: 1px;
+  }
+  &__theme-switch {
+    display: flex;
+    align-items: center;
+    width: 48px;
+    height: 28px;
+    padding: 3px;
+    border-radius: 20px;
+    background-color: var(--color-text-muted);
+    cursor: pointer;
+    @include mixins.transition(background-color);
+  }
+
+  &__theme-slider {
+    width: 22px;
+    height: 22px;
+    border-radius: 50%;
+    background-color: white;
+    @include mixins.transition(transform);
+  }
+  &__theme-input:checked + .header__theme-switch {
+    background-color: var(--color-accent);
+    & .header__theme-slider {
+      transform: translateX(20px);
+    }
+  }
+  &__theme-input:focus-visible + .header__theme-switch {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
+
+.button {
+  color: var(--color-text-secondary);
+  @include mixins.transition(color, background-color, border-color);
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+
+  @include mixins.hover;
+
+  @include mixins.focus-outline;
+}

@@ -26,6 +26,11 @@ ol {
   list-style: none;
 }
 
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
 button,
 input,
 textarea,
@@ -34,6 +39,11 @@ select {
 }
 
 button {
+  padding: 0;
+  border: none;
+  background: none;
+  color: inherit;
+  font: inherit;
   cursor: pointer;
 }
 
@@ -42,31 +52,4 @@ img {
   display: block;
 }
 
-:root {
-  /* Фон */
-  --color-bg: #0d0f12;
-  --color-sidebar: #17191d;
-  --color-card: #1b1e23;
-  --color-card-hover: #22262d;
-
-  /* Текст */
-  --color-text-primary: #f5f7fa;
-  --color-text-secondary: #9aa3b2;
-  --color-text-muted: #6b7280;
-
-  /* Акцент */
-  --color-accent: #3b82ff;
-  --color-accent-hover: #2563eb;
-
-  /* Логотип / дополнительные акценты */
-  --color-purple: #6366f1;
-  --color-cyan: #22d3ee;
-
-  /* Состояния */
-  --color-success: #22c55e;
-  --color-warning: #f59e0b;
-  --color-danger: #ef4444;
-
-  /* Границы */
-  --color-border: #2a2f38;
-}
+/*# sourceMappingURL=global.css.map */

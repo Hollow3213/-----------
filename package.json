@@ -1,0 +1,22 @@
+{
+  "name": "task-tracker",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "watch:sass": "sass --watch styles/scss:styles"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Hollow3213/-----------.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/Hollow3213/-----------/issues"
+  },
+  "homepage": "https://github.com/Hollow3213/-----------#readme"
+}

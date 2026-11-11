@@ -1,0 +1,48 @@
+//ФОКУС
+
+@mixin focus-outline {
+  &:focus {
+    outline: none;
+  }
+
+  &:focus-visible {
+    outline: 2px solid var(--color-accent);
+  }
+}
+
+//ХОВЕР ЭФФЕКТ
+
+@mixin hover {
+  &:hover {
+    color: var(--color-accent-hover);
+    background-color: color-mix(
+      in srgb,
+      var(--color-text-muted) 30%,
+      transparent
+    );
+  }
+}
+
+//ФЛЕКС центрирование
+
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+}
+
+@mixin flex-column {
+  display: flex;
+  flex-direction: column;
+}
+
+//БАЗОВАЯ АНИМАЦИЯ
+
+@mixin transition($properties...) {
+  $transitions: ();
+
+  @each $property in $properties {
+    $transitions: append($transitions, $property 0.3s ease, comma);
+  }
+
+  transition: $transitions;
+}

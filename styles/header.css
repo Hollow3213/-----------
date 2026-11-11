@@ -1,0 +1,118 @@
+.layout {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  flex-shrink: 0;
+}
+
+.main {
+  flex: 1;
+  min-width: 0;
+}
+
+.header {
+  background-color: var(--color-sidebar);
+  padding: 12px;
+  border-bottom: 3px solid var(--color-border);
+}
+.header__actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.header__left {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.header__right {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+.header__search {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+.header__search-form {
+  width: 0;
+  opacity: 0;
+  overflow: hidden;
+  transition: width 0.3s ease, opacity 0.3s ease;
+}
+.header__search.header__search_open .header__search-form {
+  width: 210px;
+  opacity: 1;
+}
+.header__search-input {
+  background-color: color-mix(in srgb, var(--color-text-muted) 30%, transparent);
+  border: 2px solid var(--color-text-muted);
+  color: var(--color-text-primary);
+  padding: 5px 5px;
+  border-radius: 8px;
+  outline: none;
+  transition: border-color 0.3s ease, background-color 0.3s ease;
+}
+.header__search-input:focus {
+  border-color: var(--color-accent);
+}
+.header__theme-input {
+  position: absolute;
+  opacity: 0;
+  width: 1px;
+  height: 1px;
+}
+.header__theme-switch {
+  display: flex;
+  align-items: center;
+  width: 48px;
+  height: 28px;
+  padding: 3px;
+  border-radius: 20px;
+  background-color: var(--color-text-muted);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+.header__theme-slider {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background-color: white;
+  transition: transform 0.3s ease;
+}
+.header__theme-input:checked + .header__theme-switch {
+  background-color: var(--color-accent);
+}
+.header__theme-input:checked + .header__theme-switch .header__theme-slider {
+  transform: translateX(20px);
+}
+.header__theme-input:focus-visible + .header__theme-switch {
+  outline: 2px solid var(--color-accent);
+  outline-offset: 3px;
+}
+
+.button {
+  color: var(--color-text-secondary);
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+}
+.button:hover {
+  color: var(--color-accent-hover);
+  background-color: color-mix(in srgb, var(--color-text-muted) 30%, transparent);
+}
+.button:focus {
+  outline: none;
+}
+.button:focus-visible {
+  outline: 2px solid var(--color-accent);
+}
+
+/*# sourceMappingURL=header.css.map */
