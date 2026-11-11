@@ -4,8 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "watch:sass": "sass --watch styles/scss:styles"
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview"
   },
   "repository": {
     "type": "git",
@@ -18,5 +19,14 @@
   "bugs": {
     "url": "https://github.com/Hollow3213/-----------/issues"
   },
-  "homepage": "https://github.com/Hollow3213/-----------#readme"
+  "homepage": "https://github.com/Hollow3213/-----------#readme",
+  "devDependencies": {
+    "@vitejs/plugin-react": "^6.3.0",
+    "sass": "^1.108.2",
+    "vite": "^8.3.8"
+  },
+  "dependencies": {
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1"
+  }
 }
