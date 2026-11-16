@@ -1,5 +1,5 @@
 //ФОКУС
-
+@use "sass:list";
 @mixin focus-outline {
   &:focus {
     outline: none;
@@ -41,7 +41,7 @@
   $transitions: ();
 
   @each $property in $properties {
-    $transitions: append($transitions, $property 0.3s ease, comma);
+    $transitions: list.append($transitions, $property 0.3s ease, comma);
   }
 
   transition: $transitions;
