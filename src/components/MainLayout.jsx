@@ -1,8 +1,21 @@
+import { useState } from "react";
 import Header from "./Header/Header.jsx";
 import TasksIcon from "./mainLayout-icons/TasksIcon.jsx";
 import InProgressIcon from "./mainLayout-icons/InProgressIcon.jsx";
 import CompletedIcon from "./mainLayout-icons/CompletedIcon.jsx";
+import CreateTaskCard from "./CreateTaskCard/CreateTaskCard.jsx";
+import CreateTaskModal from "./CreateTaskModal/CreateTaskModal.jsx";
 function MainLayout() {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  function handleOpenModal() {
+    setIsModalOpen(true);
+  }
+
+  function handleCloseModal() {
+    setIsModalOpen(false);
+  }
+
   const cards = [
     {
       id: 1,
@@ -43,22 +56,29 @@ function MainLayout() {
     "Um passo de cada vez.",
   ];
 
-  const randomGreeting =
-    greetings[Math.floor(Math.random() * greetings.length)];
+  const [greeting] = useState(() => {
+    const randomGreeting =
+      greetings[Math.floor(Math.random() * greetings.length)];
+    return randomGreeting;
+  });
 
-  const randomPhrase =
-    motivationPhrases[Math.floor(Math.random() * motivationPhrases.length)];
+  const [phrase] = useState(() => {
+    const randomPhrase =
+      motivationPhrases[Math.floor(Math.random() * motivationPhrases.length)];
+    return randomPhrase;
+  });
+
   return (
     <main className="main">
       <Header />
       <div className="main__wrapper">
         <section className="main__welcome">
           <h1 className="main__welcome-title">
-            <span className="main__welcome-greeting">{randomGreeting}</span>
+            <span className="main__welcome-greeting">{greeting}</span>
             <span className="main__welcome-name">Игорь</span>
           </h1>
           <div className="main__welcome-flex">
-            <p className="main__welcome-text">{randomPhrase}</p>
+            <p className="main__welcome-text">{phrase}</p>
             <svg
               xmlns="http://www.w3.org/2000/svg"
               width="32"
@@ -84,6 +104,8 @@ function MainLayout() {
           ))}
         </section>
       </div>
+      <CreateTaskCard onOpenModal={handleOpenModal} />
+      {isModalOpen && <CreateTaskModal onClose={handleCloseModal} />}
     </main>
   );
 }

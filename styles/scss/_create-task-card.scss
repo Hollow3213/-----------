@@ -1,0 +1,41 @@
+@use "mixins";
+
+.main__create {
+  &-task {
+    border: 5px dashed var(--color-text-muted);
+    border-radius: 20px;
+    padding: 50px;
+    display: block;
+    width: 320px;
+    margin: 100px auto;
+    min-height: 220px;
+
+    @include mixins.hover;
+
+    &:focus {
+      outline: none;
+    }
+
+    &:focus-visible {
+      outline: 2px solid var(--color-accent);
+    }
+  }
+  &-title {
+    font-family: var(--font-heading);
+    font-size: 18px;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: var(--color-text-secondary);
+    margin-bottom: 5px;
+  }
+
+  &-text {
+    font-family: var(--font-primary);
+    font-size: 14px;
+    font-weight: 500;
+    line-height: 1.2;
+    letter-spacing: -0.5px;
+    color: var(--color-text-secondary);
+  }
+}

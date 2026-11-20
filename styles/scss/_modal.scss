@@ -1,0 +1,53 @@
+@use "mixins";
+
+.modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  @include mixins.flex-center;
+  justify-content: center;
+
+  &__overlay {
+    @include mixins.flex-center;
+    justify-content: center;
+    width: 100%;
+    height: 100%;
+    background-color: color-mix(
+      in srgb,
+      var(--color-bg-opacity) 60%,
+      transparent
+    );
+  }
+
+  &__content {
+    @include mixins.flex-column;
+    gap: 20px;
+    width: 900px;
+    background-color: var(--color-bg);
+    border-radius: 30px;
+    padding: 25px;
+  }
+
+  &__header {
+    @include mixins.flex-center;
+    justify-content: space-between;
+
+    &-title-container {
+      @include mixins.flex-center;
+      gap: 10px;
+    }
+
+    &-title {
+      font-family: var(--font-heading);
+      font-size: 24px;
+      font-weight: 800;
+      line-height: 1.2;
+      letter-spacing: -0.5px;
+      color: var(--color-text-secondary);
+    }
+
+    &-close-btn {
+      @include mixins.flex-center;
+    }
+  }
+}
